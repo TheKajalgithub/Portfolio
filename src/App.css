@@ -1,38 +1,306 @@
-.App {
-  text-align: center;
+/* ===== GLOBAL ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background: #10368e;
+  color: #f1f5f9;
 }
 
-.App-header {
-  background-color: #282c34;
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ebeff2;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links li:hover {
+  color: #38bdf8;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ===== HOME ===== */
+.home {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 100px 5%;
+}
+
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.home-content {
+  flex: 1;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+}
+
+.home span {
+  color: #38bdf8;
+}
+
+.tagline {
+  color: #38bdf8;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.3s;
+}
+
+
+
+.btn-primary:hover {
+  background: #0ea5e9;
+}
+
+.btn-secondary {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn-secondary:hover {
+  background: #38bdf8;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Profile Card */
+.home-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.profile-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  width: 260px;
+}
+
+.profile-avatar {
+  font-size: 3rem;
+}
+
+.status-dot {
+  height: 8px;
+  width: 8px;
+  background: #11c817;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 100px 5%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 40px;
+}
+
+/* ===== ABOUT ===== */
+.about-grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.highlight {
+  color: #47a09e;
+}
+
+.experience-card {
+  flex: 1;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.badge {
+  background: #0bcc48;
+  color: black;
+  padding: 3px 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+/* ===== SKILLS ===== */
+/* ===== SKILLS (VERTICAL LIST) ===== */
+.skills-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #1e293b;
+  padding: 15px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.skill-row:hover {
+  transform: translateX(5px);
+  background: #334155;
+}
+
+.skill-row .icon {
+  font-size: 1.5rem;
+  color: #38bdf8;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ===== CONTACT ===== */
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  background: #334155;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #38bdf8;
+  font-size: 1.2rem;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    flex-direction: column;
+    background: #020617;
+    width: 200px;
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .home-container {
+    flex-direction: column;
+    text-align: center;
   }
 }
